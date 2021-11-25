@@ -1,25 +1,23 @@
 package com.samsung.careers.controller;
 
-import com.samsung.careers.repository.ProdRepository;
-import com.samsung.careers.service.ProductService;
+import com.samsung.careers.service.SampleService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ControllerTest {
 
-    private final ProdRepository prodRepository;
-    private final ProductService productService;
+    private final SampleService sampleService;
 
-    public ControllerTest(ProdRepository prodRepository, ProductService productService) {
-        this.prodRepository = prodRepository;
-        this.productService = productService;
+    public ControllerTest(SampleService sampleService) {
+        this.sampleService = sampleService;
     }
+
 
     @GetMapping("main")
     public String hello(){
       //  System.out.println("controllerTest --> " + prodRepository.findAll().toString());
-        System.out.println("controllerTest ---> " + productService.selectAllList().toString());
+        System.out.println("controllerTest ---> " + sampleService.selectAll().toString());
         return "main";
     }
 

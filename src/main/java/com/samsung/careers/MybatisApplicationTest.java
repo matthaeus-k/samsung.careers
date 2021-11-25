@@ -1,6 +1,5 @@
 package com.samsung.careers;
 
-import com.samsung.careers.repository.ProdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,14 +13,8 @@ public class MybatisApplicationTest implements CommandLineRunner {
        // SpringApplication.run(MybatisApplicationTest.class,args);
     }
 
-    private final ProdRepository prodRepository;
-
-    public MybatisApplicationTest(ProdRepository prodRepository) {
-        this.prodRepository = prodRepository;
-    }
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("mybatisApplication --> " + prodRepository.findAll().toString());
     }
 }

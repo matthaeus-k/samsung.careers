@@ -10,6 +10,8 @@
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 
-	<typeAliases></typeAliases>
+	<typeAliases>
+		<typeAlias alias="Products" type="com.samsung.careers.dto.ProductsDto"/>
+	</typeAliases>
 
 </configuration>

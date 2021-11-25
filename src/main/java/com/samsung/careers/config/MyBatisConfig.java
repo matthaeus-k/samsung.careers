@@ -11,18 +11,18 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 
-@Slf4j
-@Configuration
-@ComponentScan(basePackages = {"com.samsung.careers"})
-public class MyBatisConfig {
+    @Slf4j
+    @Configuration
+    @ComponentScan(basePackages = {"com.samsung.careers"})
+    public class MyBatisConfig {
 
-    @Bean
-    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sessionFactory) {
-        return new SqlSessionTemplate(sessionFactory);
-    }
+        @Bean
+        public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sessionFactory) {
+            return new SqlSessionTemplate(sessionFactory);
+        }
 
-    @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+        @Bean
+        public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         factoryBean.setConfigLocation(

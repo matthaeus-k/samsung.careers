@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Products">
-    <select id="findAll" resultType="hashMap" >
-        SELECT * FROM PRODUCTS
+
+    <select id="findAll" resultType="hashMap">
+        SELECT
+            PROD_NAME,PROD_PRICE
+        FROM
+            PRODUCTS
     </select>
+
+
+    <select id="selectOne" resultType="Products">
+        SELECT
+            PROD_NAME,PROD_PRICE
+        FROM
+             PRODUCTS
+        WHERE
+             PROD_ID = #{prod_id}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO PRODUCTS(
+            PROD_NAME,PROD_PRICE
+        )VALUES(
+                #{prod_name,jdbcType=VARCHAR}
+                ,#{prod_price}
+        );
+    </insert>
+
+
 </mapper>
