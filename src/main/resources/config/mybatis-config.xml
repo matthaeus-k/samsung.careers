@@ -12,6 +12,7 @@
 
 	<typeAliases>
 		<typeAlias alias="Products" type="com.samsung.careers.dto.ProductsDto"/>
+		<typeAlias alias="Board" type="com.samsung.careers.dto.BoardDto"></typeAlias>
 	</typeAliases>
 
 </configuration>

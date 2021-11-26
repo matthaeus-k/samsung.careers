@@ -31,8 +31,8 @@
 3. 개발가이드 수급 일정
 4. 보안점검 가이드
 5. 개발환경
-   Language : Java8 jdk1.8.x
-   Project build : Gradle
-   framework : spring boot 2.5.7
-   view Template engines : freemarker
-   DB : oracle 19c
+   - Language : Java8 jdk1.8.x
+   - Project build : Gradle
+   - framework : spring boot 2.5.7
+   - view Template engines : freemarker
+   - DB : oracle 19c

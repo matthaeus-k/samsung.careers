@@ -31,6 +31,16 @@ public class CommonDaoImpl implements CommonDao {
     }
 
     @Override
+    public List SelectList(String strID) {
+        return sqlSessionTemplate.selectList(strID);
+    }
+
+    @Override
+    public List SelectList(String strID, Object params) {
+        return sqlSessionTemplate.selectList(strID,params);
+    }
+
+    @Override
     public Object selectOne(String strID, Object params) {
         return sqlSessionTemplate.selectOne(strID,params);
     }
@@ -38,5 +48,25 @@ public class CommonDaoImpl implements CommonDao {
     @Override
     public int insert(String strID, Object params) {
         return sqlSessionTemplate.insert(strID,params);
+    }
+
+    @Override
+    public int insert(String strID) {
+        return sqlSessionTemplate.insert(strID);
+    }
+
+    @Override
+    public int Delete(String strID, Object params) {
+        return sqlSessionTemplate.delete(strID,params);
+    }
+
+    @Override
+    public int Delete(String strID) {
+        return sqlSessionTemplate.delete(strID);
+    }
+
+    @Override
+    public int update(String strID, Object params) {
+        return sqlSessionTemplate.update(strID,params);
     }
 }

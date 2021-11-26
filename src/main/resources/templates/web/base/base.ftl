@@ -23,7 +23,7 @@
             <#include "../include/footer.ftl">
         </footer>
     </div>
-
+    <#include "../include/scripts.ftl">
     <@scripts/>
     </body>
     </html>
