@@ -1,4 +1,5 @@
 'use strict';
+
 async function Post(API_URL,body) {
     let data = '';
     let options = {
@@ -8,12 +9,20 @@ async function Post(API_URL,body) {
         },
         body: JSON.stringify(body)
     }
-    const response = await fetch(API_URL,options);
-    if(body.type === 'html'){
-        data = await response.text();
-    } else {
-        data = await response.json();
-    }
-
-    return data;
+        console.log('beforsend')
+        const response = await fetch(API_URL,options);
+        if (response.status == 200) {
+            if(body.type === 'html'){
+                data = await response.text();
+            } else {
+                data = await response.json();
+            }
+            console.log('ok')
+        }else{
+            throw new Error(response.statusText);
+            console.log('error')
+        }
+        return data;
 }
+
+
