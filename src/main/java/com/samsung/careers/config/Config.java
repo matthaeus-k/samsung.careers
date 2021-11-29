@@ -35,11 +35,4 @@ public class Config {
         return new CommonDaoImpl(sqlSessionTemplate);
     }
 
-//    @Bean
-//    public ComDAO comDAO(){
-//        return new ComDAOImpl(sqlSessionTemplate);
-//    }
-
-
-
 }
