@@ -1,7 +1,6 @@
 package com.samsung.careers.service;
 
 import com.samsung.careers.dto.BoardDto;
-import com.samsung.careers.dto.ProductsDto;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest
@@ -20,9 +18,11 @@ class BoardServiceTest {
     @Autowired
     private BoardService boardService;
 
+
+
     @Test
     void selectAll() {
-        List<BoardDto> rtn = boardService.findAll("Board.selectAll");
+        List<BoardDto> rtn = boardService.findAll();
         System.out.println("rtn -->" + rtn.size());
     }
 
