@@ -19,6 +19,7 @@ public class CommonDaoImpl implements CommonDao {
         this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
+
     @Override
     public void logQuery(String strID) {
         logger.info("----------" + strID + "--------------");
