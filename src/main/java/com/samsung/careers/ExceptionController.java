@@ -1,12 +1,9 @@
 package com.samsung.careers;
 
-import com.samsung.careers.exception.InternalException;
-import com.samsung.careers.exception.NotFoundException;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;

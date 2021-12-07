@@ -1,9 +1,5 @@
 package com.samsung.careers.controller;
 
-import com.samsung.careers.exception.BadRequestException;
-import com.samsung.careers.exception.InternalException;
-import com.samsung.careers.exception.NotFoundException;
-import com.samsung.careers.exception.RequestException;
 import com.samsung.careers.service.SampleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,14 +21,9 @@ public class ControllerTest {
     public String hello(HttpServletRequest req) throws Exception {
         //  System.out.println("controllerTest --> " + prodRepository.findAll().toString());
         System.out.println("controllerTest ---> " + sampleService.selectAll().toString());
-        throw  new InternalException(req,"500");
+     //   throw  new InternalException(req,"500", errorCode);
+      return "";
 
-
-    }
-
-    @GetMapping("ex")
-    public ResponseEntity<Object> ex(HttpServletRequest req)  {
-        throw new RequestException("asdfas");
     }
 
 

@@ -1,9 +1,11 @@
 package com.samsung.careers.service;
 
+import com.samsung.careers.common.CommonExceptionType;
 import com.samsung.careers.common.Const;
 import com.samsung.careers.dao.CommonDao;
 import com.samsung.careers.dto.BoardDto;
 import com.samsung.careers.dto.Result;
+import com.samsung.careers.exception.CustomException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +21,9 @@ public class BoardServiceImpl implements BoardService{
 
     @Override
     public int input(String strID, BoardDto params) {
+        if(strID.isEmpty()){
+            throw new CustomException(CommonExceptionType.INTERNAL_SERCER);
+        }
         return commonDao.insert(strID,params);
     }
 

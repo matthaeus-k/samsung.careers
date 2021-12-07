@@ -4,16 +4,16 @@ import com.samsung.careers.common.Const;
 import com.samsung.careers.dto.BoardDto;
 import com.samsung.careers.dto.Result;
 import com.samsung.careers.service.BoardService;
+import com.samsung.careers.validator.sampleValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class IndexController extends BaseController {
@@ -39,8 +39,38 @@ public class IndexController extends BaseController {
     @PostMapping("/list.data")
     public String listData(ModelMap modelMap){
         Result rtn = boardService.findAllList();
-        modelMap.addAttribute(Const.kEY_RESULT, rtn);
+        modelMap.addAttribute(Const.KEY_RESULT, rtn);
         return "web/list.html";
     }
+
+    @RequestMapping(value = "/validate.json", method = RequestMethod.POST)
+    @ResponseBody
+    public Result validate(BoardDto params , BindingResult bindingResult)  {
+       new sampleValidator().validate(params,bindingResult);
+
+       if(bindingResult.hasErrors()){
+           List<FieldError> errors = bindingResult.getFieldErrors();
+           for(FieldError error : errors){
+                return new Result(false, "messages",error.getField());
+           }
+       }
+
+        return new Result(true,"200");
+    }
+
+
+    @RequestMapping(value = "/add.json", method = RequestMethod.POST)
+    @ResponseBody
+    public int addJson(HttpServletRequest req, BoardDto params)  {
+       params.setContent("conttn....");
+       params.setTitle("title.....1");
+       params.setName("dlwjdgml");
+       params.setDtReg(new Date());
+
+       return boardService.input("",params);
+    }
+
+
+
 
 }

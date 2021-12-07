@@ -8,8 +8,8 @@ public interface Const {
     String VIEW_PATH = "web/";
 
     // 결과 저장용 key
-    String kEY_RESULT = "result";
-    String kEY_ITEM = "item";
+    String KEY_RESULT = "result";
+    String KEY_ITEM = "item";
     String KEY_ITEMS = "items";
     String KEY_PARAMS = "params";
 
