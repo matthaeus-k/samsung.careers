@@ -1,13 +1,17 @@
 package com.samsung.careers.common;
 
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 public enum CommonExceptionType implements  BaseExceptionType{
 
-    NOT_FOUN(404, 200, "Not fund error."),
-    INTERNAL_SERCER(500, 200, "internal server error."),
-    SESSION_TIMEOUT(500,200,"SESSION TIMEOUT")
+
+    NOT_FOUN(404, 999, "Not fund error."),
+    INTERNAL_SERCER(500, 999, "internal server error."),
+    SESSION_TIMEOUT(500,999,"session timeout"),
+    FILE_SIZE(500,999,"Don't allow files size"),
+    FILE_TYPE(500,999,"Don't allow files type")
     ;
 
 

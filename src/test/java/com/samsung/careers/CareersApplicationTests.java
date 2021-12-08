@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.support.MessageSourceAccessor;
 
+import java.nio.file.Path;
 import java.util.Locale;
 
 @SpringBootTest
@@ -15,6 +16,7 @@ class CareersApplicationTests {
 	public static void main(String[] args) {
 		//SpringApplication.run(CareersApplicationTests.class, args);
 		Locale[] locales = Locale.getAvailableLocales();
+
 
 		String msg = "";
 		System.out.println(msg);

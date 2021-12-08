@@ -12,6 +12,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Date;
 import java.util.List;
 
@@ -47,14 +49,12 @@ public class IndexController extends BaseController {
     @ResponseBody
     public Result validate(BoardDto params , BindingResult bindingResult)  {
        new sampleValidator().validate(params,bindingResult);
-
        if(bindingResult.hasErrors()){
            List<FieldError> errors = bindingResult.getFieldErrors();
            for(FieldError error : errors){
                 return new Result(false, "messages",error.getField());
            }
        }
-
         return new Result(true,"200");
     }
 
@@ -69,8 +69,5 @@ public class IndexController extends BaseController {
 
        return boardService.input("",params);
     }
-
-
-
 
 }
