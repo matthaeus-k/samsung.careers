@@ -1,4 +1,6 @@
-<#macro head></#macro>
+<#macro head>
+    <#include "../include/head.ftl">
+</#macro>
 
 <#macro headCopy></#macro>
 

@@ -1,0 +1,11 @@
+Create table test_board(
+	idx long not null auto_increment,
+	name varchar(100) not null,
+	title varchar(100) not null,
+	content varchar(255) not null,
+	is_dlt varchar(1) not null,
+	view_cnt int,
+	dt_reg timestamp not null,
+	dt_upd timestamp not null,
+	primary key (idx)
+)

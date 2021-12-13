@@ -13,5 +13,4 @@ public interface CommonDao {
     int Delete(String strID , Object params);
     int Delete(String strID);
     int update(String strID , Object params);
-
 }

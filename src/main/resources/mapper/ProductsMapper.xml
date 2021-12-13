@@ -4,7 +4,7 @@
 
     <select id="findAll" resultType="hashMap">
         SELECT
-            PROD_NAME,PROD_PRICE
+            ID,PROD_NAME,PROD_PRICE
         FROM
             PRODUCTS
     </select>

@@ -1,0 +1,47 @@
+#list td:nth-child(1){
+    text-align: center;
+    font-weight: bold;
+}
+
+#list th:nth-child(2){
+    width: 300px;
+}
+
+#list td:nth-child(2) a{
+    text-decoration: underline;
+}
+
+#list td:last-child{
+    text-align: center;
+    text-decoration: underline;
+}
+
+#list td span,
+#list td a{
+    cursor: pointer;
+}
+
+#write table,
+#edit table{
+    margin-bottom:20px;
+}
+
+#write th,
+#edit th{
+    width:100px;
+}
+
+#write span,
+#edit span{
+    width: 100%;
+    padding:10px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #ededed;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid #6c6c6c;
+    cursor: pointer;
+}
