@@ -1,11 +1,14 @@
 package com.samsung.careers.service;
 
 import com.samsung.careers.dto.BoardDto;
+import com.samsung.careers.dto.ParamsDto;
+import com.samsung.careers.dto.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.servlet.ServletContext;
 import java.util.Date;
 import java.util.List;
 
@@ -18,12 +21,22 @@ class BoardServiceTest {
     @Autowired
     private BoardService boardService;
 
-
+    @Autowired
+    ServletContext servletContext;
 
     @Test
     void selectAll() {
-        List<BoardDto> rtn = boardService.findAll();
+        List<BoardDto> rtn = boardService.selectAll();
         System.out.println("rtn -->" + rtn.size());
+        //System.out.println("path--->" + servletContext.getRealPath("/"));
+
+    }
+
+    @Test
+    void selectList(){
+        ParamsDto params = new ParamsDto();
+        Result rtn = boardService.selectList(params);
+        System.out.println(rtn.getData());
     }
 
     @Test

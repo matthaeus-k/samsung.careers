@@ -47,6 +47,12 @@ public class CommonDaoImpl implements CommonDao {
     }
 
     @Override
+    public Object selectOne(String strID) {
+        return null;
+    }
+
+
+    @Override
     public int insert(String strID, Object params) {
         return sqlSessionTemplate.insert(strID,params);
     }

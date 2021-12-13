@@ -1,9 +1,8 @@
-let listBody = {
-    type : 'html',
-    params: null
-}
+const listBody = {
+  type: 'html',
+  params: null,
+};
 
-Post('list.data',listBody).then(data => {
-   console.log(data);
-   document.querySelector('#list').innerHTML = data;
+fnPost('list.data', listBody).then((data) => {
+  document.querySelector('#list').innerHTML = data;
 });

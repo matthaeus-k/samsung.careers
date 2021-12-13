@@ -24,7 +24,7 @@ public class MessageTest {
         //Locale locale = new Locale(Locale.ENGLISH.getLanguage(),Locale.US.getCountry());
         String message = messageSource.getMessage("common.board.msg001",null,Locale.KOREA);
         Assertions.assertThat(Locale.getDefault().getCountry()).isEqualTo("KR");
-        //System.out.println(locale.toString() +" ---> " + message);
+        System.out.println(" ---> " + message);
 
     }
 }

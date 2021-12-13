@@ -1,5 +1,7 @@
 package com.samsung.careers.dto;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class BoardDto {
@@ -10,7 +12,7 @@ public class BoardDto {
     private String name  ;
     private String is_dlt ;
     // 등록일시
-    //@DateTimeFormat(pattern = "yyyy-MM-dd H:m:s")
+    @DateTimeFormat(pattern = "yyyy-MM-dd H:m:s")
     private Date dtReg ;
 
     public Long getIdx() {

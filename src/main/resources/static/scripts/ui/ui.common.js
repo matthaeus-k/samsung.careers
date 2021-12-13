@@ -1,1 +1,1 @@
-console.log("ui.common.js")
+console.log('ui.common js');

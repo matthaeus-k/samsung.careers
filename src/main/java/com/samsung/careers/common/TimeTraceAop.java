@@ -13,14 +13,14 @@ public class TimeTraceAop {
     @Around("execution(* com.samsung.careers..*(..))")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         long st = System.currentTimeMillis();
-        System.out.println("ST: " + joinPoint.toString());
+        //System.out.println("ST: " + joinPoint.toString());
         try {
             Object rtn = joinPoint.proceed();
             return rtn;
         } finally {
             long finish = System.currentTimeMillis();
             long timeMs = finish - st;
-            System.out.println("END: " + joinPoint.toString()+ " " + timeMs +"ms");
+            //System.out.println("END: " + joinPoint.toString()+ " " + timeMs +"ms");
         }
     }
 

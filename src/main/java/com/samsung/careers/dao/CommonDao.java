@@ -8,6 +8,9 @@ public interface CommonDao {
     List SelectList(String strID);
     List SelectList(String strID , Object params );
     Object selectOne(String strID , Object params );
+    Object selectOne(String strID );
+
+
     int insert(String strID , Object params) ;
     int insert(String strID);
     int Delete(String strID , Object params);

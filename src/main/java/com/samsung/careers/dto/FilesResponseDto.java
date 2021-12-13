@@ -1,12 +1,7 @@
 package com.samsung.careers.dto;
 
-import org.springframework.web.multipart.MultipartFile;
+public class FilesResponseDto {
 
-import java.util.Arrays;
-
-public class FilesDto {
-
-    private MultipartFile[] files;
     private Long fileSize;
     private String saveFileName;
     private String realFileName;
@@ -14,21 +9,6 @@ public class FilesDto {
     private String filePath;
     private String fileType;
     private String uploadType;
-
-
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
-    }
-
-    private String profiles;
-
-    public MultipartFile[] getFiles() {
-        return files;
-    }
-
-    public void setFiles(MultipartFile[] files) {
-        this.files = files;
-    }
 
     public Long getFileSize() {
         return fileSize;
@@ -70,16 +50,12 @@ public class FilesDto {
         this.filePath = filePath;
     }
 
-    public String getProfiles() {
-        return profiles;
-    }
-
-    public void setProfiles(String profiles) {
-        this.profiles = profiles;
-    }
-
     public String getFileType() {
         return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
 
     public String getUploadType() {
@@ -92,15 +68,14 @@ public class FilesDto {
 
     @Override
     public String toString() {
-        return "FilesDto{" +
-                "multiPartFile=" + Arrays.toString(files) +
-                ", fileSize=" + fileSize +
+        return "FilesResponseDto{" +
+                "fileSize=" + fileSize +
                 ", saveFileName='" + saveFileName + '\'' +
                 ", realFileName='" + realFileName + '\'' +
                 ", fileDir='" + fileDir + '\'' +
                 ", filePath='" + filePath + '\'' +
                 ", fileType='" + fileType + '\'' +
-                ", profiles='" + profiles + '\'' +
+                ", uploadType='" + uploadType + '\'' +
                 '}';
     }
 }

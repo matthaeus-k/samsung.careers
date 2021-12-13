@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="common">
+
+    <sql id="pagingStartInclude">
+        SELECT B.* FROM (
+                SELECT ROWNUM AS RNUM, A.* FROM (
+    </sql>
+
+    <sql id="pagingEndInclude">
+            ) A
+                WHERE ROWNUM <![CDATA[<=]]> #{currentPageNo} * #{recordCountPerPage}
+        ) B
+            WHERE B.RNUM >= (#{currentPageNo} - 1) * #{recordCountPerPage} + 1
+    </sql>
+</mapper>
