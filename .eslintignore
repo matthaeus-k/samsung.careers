@@ -1,2 +1,5 @@
 /src/main/resources/static/scripts/lib/*.js
 /src/main/resources/static/scripts/ui/*.js
+/src/main/resources/static/public/modules/**/**/*.js
+/out/
+/build/
