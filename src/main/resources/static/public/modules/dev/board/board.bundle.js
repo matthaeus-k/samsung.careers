@@ -15,7 +15,7 @@
   \**************************************************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/eslint-loader/dist/cjs.js):\\nTypeError: Cannot read property 'getFormatter' of undefined\\n    at getFormatter (/Users/matthaeuskwon/dev/workspace.java/samsung.careers/node_modules/eslint-loader/dist/getOptions.js:52:20)\\n    at getOptions (/Users/matthaeuskwon/dev/workspace.java/samsung.careers/node_modules/eslint-loader/dist/getOptions.js:30:23)\\n    at Object.loader (/Users/matthaeuskwon/dev/workspace.java/samsung.careers/node_modules/eslint-loader/dist/index.js:17:43)\");\n\n//# sourceURL=webpack://samsung.careers/./src/main/resources/static/scripts/dev/board/board.js?");
+eval("const listBody = {\n  type: 'html',\n  params: null,\n};\n\nfnPost('list.data', listBody).then((data) => {\n  console.log(data);\n  document.querySelector('#list').innerHTML = data;\n});\n\n\n//# sourceURL=webpack://samsung.careers/./src/main/resources/static/scripts/dev/board/board.js?");
 
 /***/ })
 
@@ -24,7 +24,7 @@ eval("throw new Error(\"Module build failed (from ./node_modules/eslint-loader/d
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
 /******/ 	__webpack_modules__["./src/main/resources/static/scripts/dev/board/board.js"]();
 /******/ 	
