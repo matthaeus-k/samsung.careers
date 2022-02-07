@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+        stage('Gradle Build') {
             steps {
                npm install
-               sh 'clean build --debug'
+               sh 'gradle clean build -x test -b build-server.gradle'
             }
         }
     }
