@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps {
                npm install
-               sh 'gradle clean build'
+               sh 'clean build --debug'
             }
         }
     }
