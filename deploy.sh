@@ -16,7 +16,7 @@ fi
 if [ -e /var/webapps/$project/ROOT.war ]; then
     sudo rm -r /var/webapps/$project/back/*
     sudo mv /var/webapps/$project/ROOT.war  /var/webapps/$project/back/$timestamp".war"
-    echo "move bak folder"
+    echo "move back directory"
 fi
 
 cd /var/lib/jenkins/workspace/$project
