@@ -16,7 +16,7 @@ fi
 if [ -e /var/webapps/$project/ROOT.war ]; then
     sudo rm -r /var/webapps/$project/back/*
     sudo mv /var/webapps/$project/ROOT.war  /var/webapps/$project/back/$timestamp".war"
-    echo "move back directory"
+    echo "backup file create:${timestamp}"
 fi
 
 cd /var/lib/jenkins/workspace/$project
