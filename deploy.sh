@@ -19,7 +19,7 @@ if [ -e /var/webapps/$project/ROOT.war ]; then
     echo "move bak folder"
 fi
 
-cd /var/lib/jenkins/workspace/Demo1
+cd /var/lib/jenkins/workspace/$project
 sudo find . -name "*-SNAPSHOT".war -exec cp {} /var/webapps/$project/ROOT.war \;
 cd /usr/local/tomcat/samsung.careers.9.0.58/bin
 sudo ./startup.sh
